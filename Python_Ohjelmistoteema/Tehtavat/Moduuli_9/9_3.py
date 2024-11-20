@@ -1,11 +1,11 @@
 class Auto:
-    def __init__(self,rekisteritunnus, huippunopeus, nopeus = 0, matka = 0):
+    def __init__(self, rekisteritunnus, huippunopeus, nopeus=0, matka=0):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = nopeus
         self.matka = matka
 
-    def kiihdyta(self,muutos):
+    def kiihdyta(self, muutos):
 
         self.nopeus = self.nopeus + muutos
 
@@ -14,17 +14,17 @@ class Auto:
         elif self.nopeus < 0:
             self.nopeus = 0
 
-    def kulje(self,tunnit):
+    def kulje(self, tunnit):
         self.matka = self.matka + (self.nopeus * tunnit)
         kuljettu = self.nopeus * tunnit
         return kuljettu
+
 
 def kmh(parametri):
     return str(parametri) + " km/h"
 
 
 auto1 = Auto("ABC-123", 142)
-
 
 print(f"Auton rekisteritunnus on: {auto1.rekisteritunnus}\nAuton huippunopeus on: {kmh(auto1.huippunopeus)}")
 print(f"Auton kulkema nopeus on: {kmh(auto1.nopeus)}\nAuton kulkema matka on: {auto1.matka} km")

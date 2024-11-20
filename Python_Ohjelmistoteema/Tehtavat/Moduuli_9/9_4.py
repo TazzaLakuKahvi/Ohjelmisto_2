@@ -1,7 +1,8 @@
 import random
 
+
 class Auto:
-    def __init__(self, rekisteritunnus, huippunopeus, nopeus = 0, matka = 0):
+    def __init__(self, rekisteritunnus, huippunopeus, nopeus=0, matka=0):
         self.rekisteritunnus = rekisteritunnus
         self.huippunopeus = huippunopeus
         self.nopeus = nopeus
@@ -21,25 +22,29 @@ class Auto:
         kuljettu = self.nopeus * tunnit
         return kuljettu
 
+
 def kmh(parametri):
     return str(parametri) + " km/h"
+
+
 def km(parametri):
     return str(parametri) + " km"
 
-def tulokset(lista):
 
+def tulokset(lista):
     print(f"{"":-^57}")
     print(f"|{"rekisteritunnus":^17}|{"huippunopeus":^15}|{"nopeus":^10}|{"matka":^10}|")
 
     for x in range(len(lista)):
         print(f"{"":-^57}")
-        print(f"|{lista[x].rekisteritunnus:^17}|{kmh(lista[x].huippunopeus):^15}|{kmh(lista[x].nopeus):^10}|{km(lista[x].matka):^10}|")
+        print(
+            f"|{lista[x].rekisteritunnus:^17}|{kmh(lista[x].huippunopeus):^15}|{kmh(lista[x].nopeus):^10}|{km(lista[x].matka):^10}|")
     print(f"{"":-^57}")
+
 
 autot = {}
 for i in range(10):
-    autot[i] = Auto(rekisteritunnus = f"ABC-{i+1}", huippunopeus = random.randint(100,200))
-
+    autot[i] = Auto(rekisteritunnus=f"ABC-{i + 1}", huippunopeus=random.randint(100, 200))
 
 auto_maalissa = False
 while not auto_maalissa:
